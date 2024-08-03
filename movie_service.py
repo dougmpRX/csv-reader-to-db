@@ -29,6 +29,17 @@ class MovieService:
         else:
             print("No movies found.")
             return []
+    
+    def get_movies_by_status(self, status: int = 0):
+        movies = self.db.get_movie_by_downloaded_status('movie_tb', status)
+        if movies is not None:
+            return movies
+        else:
+            print("No movies found.")
+            return []
+        
+    def update_movie_status(self, movie_code):
+        self.db.update_movie_as_downloaded(movie_code)
 
     def close_connection(self):
         self.db.close_connection()

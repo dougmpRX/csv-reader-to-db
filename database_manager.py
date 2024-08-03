@@ -73,6 +73,20 @@ class DatabaseManager:
         except sqlite3.Error as e:
             print(f'Movie retrieval failed with error: {e}')
             return []
+        
+    def update_movie_as_downloaded(self, movie_code: str):
+        query = f"""
+        UPDATE movie_tb
+        SET is_downloaded = 1
+        WHERE movie_code = ?;
+        """
+        try:
+            self.conn.execute(query, (movie_code,))
+            self.conn.commit()
+            print(f'Movie with code {movie_code} marked as downloaded!')
+        except sqlite3.Error as e:
+            print(f'Update failed with error: {e}')
+
 
     def close_connection(self):
         if self.conn is not None:
