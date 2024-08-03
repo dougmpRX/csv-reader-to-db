@@ -20,7 +20,7 @@ class DatabaseManager:
             image_url TEXT NOT NULL,
             thumbnail_url TEXT NOT NULL,
             actor_name TEXT NOT NULL,
-            is_downloaded INTEGER NOT NULL
+            is_downloaded INTEGER NOT NULL DEFAULT 0
         );
         """
         try:
