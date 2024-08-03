@@ -12,7 +12,7 @@ class Movie:
         self.is_downloaded = is_downloaded
 
     def __str__(self):
-        return f"Movie(movie_code='{self.movie_code}', movie_title='{self.movie_title}', 
-        release_date='{self.release_date}', movie_url='{self.movie_url}', 
-        image_url='{self.image_url}', thumb_nail_url='{self.thumbnail_url}', 
-        actor_name='{self.actor_name}', is_downloaded={int(self.is_downloaded)})"
+        return f"Movie(movie_code='{self.movie_code}', movie_title='{self.movie_title}', \
+                release_date='{self.release_date}', movie_url='{self.movie_url}', \
+                image_url='{self.image_url}', thumb_nail_url='{self.thumbnail_url}', \
+                actor_name='{self.actor_name}', is_downloaded={int(self.is_downloaded)})"
